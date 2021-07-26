@@ -1,0 +1,37 @@
+{% extends "urunler/navbar_top.html" %}
+
+{% block main %}
+<h1>{{ search_txt }} <small class="text-muted fw-light">toplam: {{ urunler.count }}</small></h1>
+<div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+{% for urun in urunler %}
+    <div class="col">
+    <div class="card mb-4 rounded-3 shadow-sm">
+      <div class="card-header py-3">
+        <h4 class="my-0 fw-normal">{{ urun.kod }}</h4>
+      </div>
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title">{{ urun.fiyat }}<small class="text-muted fw-light">/{{ urun.birim }}</small></h1>
+        <ul class="list-unstyled mt-3 mb-4">
+          <li>{{ urun.aciklama }}</li>
+          <li><p>{{ urun.uretici }}</li>
+        </ul>
+        <h3 class="card-title pricing-card-title">{{ urun.stok }}</h3>
+        <!-- <a href="{% url 'urunler-update' urun.id %}" class="w-100 btn btn-lg btn-outline-primary">Güncelle</a> -->
+        <div class="row">
+          <div class="col-md-6"><a href="{% url 'urunler-buy' urun.id %}" class="w-100 btn btn-lg btn-outline-primary">Al</a></div>
+          <div class="col-md-6"><a href="{% url 'urunler-sell' urun.id %}" class="w-100 btn btn-lg btn-outline-success col-md-6">Sat</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% empty %}
+  <h1 class="alert alert-danger">Gösterilecek ürün bulunamadı.</h1>
+{% endfor %}
+</div>
+{% endblock %}
+
+{% block script %}
+<script>
+    // js goes here...
+</script>
+{% endblock %}

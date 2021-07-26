@@ -1,0 +1,13 @@
+{% extends "urunler/navbar_top.html" %}
+
+{% block main %}
+<ul>
+    <li>{{ urunler.id }}</li>
+    <li>{{ urunler.kod }}</li>
+    <li>{{ urunler.aciklama }}</li>
+    <li>{{ urunler.uretici }}</li>
+    <li>{{ urunler.birim }}</li>
+    <li>{{ urunler.fiyat }}</li>
+    <li>{{ urunler.stok }}</li>
+</ul>
+{% endblock %}

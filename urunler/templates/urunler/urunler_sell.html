@@ -1,0 +1,16 @@
+{% extends "urunler/navbar_top.html" %}
+
+{% block main %}
+<h1>SATIŞ İŞLEMİ</h1>
+
+<form action="" method="POST">{% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" />
+</form>
+{% endblock %}
+
+{% block script %}
+<script>
+    // js goes here...
+</script>
+{% endblock %}

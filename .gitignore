@@ -1,0 +1,8 @@
+.env/
+.vscode/
+react_frontend/
+todos.txt
+db.sqlite3
+*.pyc
+*/migrations/
+__init__.py
